@@ -37,6 +37,10 @@ export default {
     },
     async rateConversation() {
       try {
+        // Ensure comments have a value
+        if (!this.comments) {
+          this.comments = "None";
+        }
         // Send the rating to the backend
         const response = await fetch("/api/chat", {
           method: "POST",
