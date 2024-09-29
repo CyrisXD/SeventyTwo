@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.chat-bubble {
+  --animate-duration: 0.3s;
+}
+
+/* Styling for typing animation */
+.typing-dots {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 10px;
+}
+.typing-dots div {
+  position: absolute;
+  top: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.typing-dots div:nth-child(1) {
+  left: 0;
+  animation: typing-dot1 0.6s infinite;
+}
+.typing-dots div:nth-child(2) {
+  left: 8px;
+  animation: typing-dot2 0.6s infinite;
+}
+.typing-dots div:nth-child(3) {
+  left: 16px;
+  animation: typing-dot3 0.6s infinite;
+}
+@keyframes typing-dot1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes typing-dot2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(8px);
+  }
+}
+@keyframes typing-dot3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
